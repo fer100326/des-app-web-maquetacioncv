@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio | Proyectos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Mafer<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+        </ul>
+        <a href="index.html" class="btn-contact">Volver al Inicio</a>
+    </nav>
+
+    <section class="portfolio" id="portafolio" style="padding: 100px 10%;">
+        <div class="portfolio-header" style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.5rem; color: #162e91;">Mi <span>Portafolio</span></h2>
+            <p>Explora mis trabajos por categoría</p>
+        </div>
+
+        <div class="portfolio-tabs" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 40px;">
+            <button class="tab-btn active" onclick="filterPortafolio('todos')">Todos</button>
+            <button class="tab-btn" onclick="filterPortafolio('carteles')">Carteles</button>
+            <button class="tab-btn" onclick="filterPortafolio('ilustraciones')">Ilustraciones</button>
+            <button class="tab-btn" onclick="filterPortafolio('modelado')">Modelado 3D</button>
+        </div>
+
+        <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <div class="project-card carteles">
+                <div class="card-accent"></div>
+                <div class="project-img placeholder-cartel">Próximamente: Cartel</div>
+                <div class="project-info">
+                    <h4>Diseño Editorial</h4>
+                    <p>Composición y tipografía</p>
+                </div>
+            </div>
+
+            <div class="project-card ilustraciones">
+                <div class="card-accent"></div>
+                <div class="project-img placeholder-ilustracion">En proceso...</div>
+                <div class="project-info">
+                    <h4>Arte Digital</h4>
+                    <p>MediBang Paint Pro</p>
+                </div>
+            </div>
+
+            <div class="project-card modelado">
+                <div class="card-accent"></div>
+                <div class="project-img placeholder-3d">Próximamente: Blender</div>
+                <div class="project-info">
+                    <h4>Personaje Low Poly</h4>
+                    <p>Modelado 3D en Blender</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+    function filterPortafolio(category) {
+        const cards = document.querySelectorAll('.project-card');
+        const buttons = document.querySelectorAll('.tab-btn');
+
+        // Cambiar botón activo
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                if (category === 'todos' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.display = 'none';
+                }
+            }, 300);
+        });
+    }
+    </script>
+
+</body>
+</html>
