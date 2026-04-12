@@ -198,3 +198,82 @@ width: 100%;
     color:#1a1a1a; 
     border-color: var(--rosa-tarjeta);
 }
+.cv-section {
+    padding: 100px 5%;
+    background-color: #f7f9fc; 
+}
+
+.cv-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cv-column {
+    flex: 1;
+    min-width: 320px;
+    max-width: 500px;
+}
+
+.cv-card {
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    box-shadow: 15px 15px 30px #d1d9e6, -15px -15px 30px #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.cv-card:hover {
+    transform: translateY(-5px); 
+}
+
+.cv-card h3 {
+    color: #5D8AA8;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-left: 5px solid #ffb7c5; 
+    padding-left: 15px;
+}
+
+.cv-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background: #fdf2ff;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.skills-bar{
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 8px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.skill-per {
+    background-color: #ffb7c5;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.resume-item {
+    margin-bottom: 25px; 
+}
