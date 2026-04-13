@@ -302,3 +302,48 @@ body {
     background: #4a6e8a;
     transform: translateY(-2px);
 }
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.portfolio-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Esto evita que tus dibujos se estiren feo */
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.btn-portfolio {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5b85a1; /* Usa el color azul que ya tienes */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-portfolio:hover {
+    background-color: #4a6d85;
+}

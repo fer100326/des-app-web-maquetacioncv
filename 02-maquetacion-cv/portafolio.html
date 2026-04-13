@@ -9,86 +9,62 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Mafer<span>.</span></div>
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="portafolio.html">Portafolio</a></li>
         </ul>
-        <a href="index.html" class="btn-contact">Volver al Inicio</a>
     </nav>
-
-    <section class="portfolio" id="portafolio" style="padding: 100px 10%;">
-        <div class="portfolio-header" style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.5rem; color: #162e91;">Mi <span>Portafolio</span></h2>
-            <p>Explora mis trabajos por categoría</p>
-        </div>
-
-        <div class="portfolio-tabs" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 40px;">
-            <button class="tab-btn active" onclick="filterPortafolio('todos')">Todos</button>
-            <button class="tab-btn" onclick="filterPortafolio('carteles')">Carteles</button>
-            <button class="tab-btn" onclick="filterPortafolio('ilustraciones')">Ilustraciones</button>
-            <button class="tab-btn" onclick="filterPortafolio('modelado')">Modelado 3D</button>
-        </div>
-
-        <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+<section id="portafolio" class="portfolio-section">
+    <div class="container">
+        <h2 class="section-title">Mi Portafolio</h2>
+        <p class="section-subtitle">Explora mis trabajos por categoría</p>
+        
+        <div class="portfolio-grid">
             
-            <div class="project-card carteles">
-                <div class="card-accent"></div>
-                <div class="project-img placeholder-cartel">Próximamente: Cartel</div>
-                <div class="project-info">
-                    <h4>Diseño Editorial</h4>
-                    <p>Composición y tipografía</p>
+            <div class="portfolio-card">
+                <div class="card-image">
+                    <img src="img/preview-ilustracion.jpg" alt="Ilustraciones Digitales">
+                </div>
+                <div class="card-content">
+                    <h3>Ilustración Digital</h3>
+                    <p>Personajes y arte digital realizados en MediBang e ibisPaint.</p>
+                    <a href="ilustraciones.html" class="btn-portfolio">Ver Galería</a>
                 </div>
             </div>
 
-            <div class="project-card ilustraciones">
-                <div class="card-accent"></div>
-                <div class="project-img placeholder-ilustracion">En proceso...</div>
-                <div class="project-info">
-                    <h4>Arte Digital</h4>
-                    <p>MediBang Paint Pro</p>
+            <div class="portfolio-card">
+                <div class="card-image">
+                    <img src="img/preview-blender.jpg" alt="Modelado 3D">
+                </div>
+                <div class="card-content">
+                    <h3>Modelado 3D</h3>
+                    <p>Renders y modelos de personajes creados en Blender.</p>
+                    <a href="blender.html" class="btn-portfolio">Ver Renders</a>
                 </div>
             </div>
 
-            <div class="project-card modelado">
-                <div class="card-accent"></div>
-                <div class="project-img placeholder-3d">Próximamente: Blender</div>
-                <div class="project-info">
-                    <h4>Personaje Low Poly</h4>
-                    <p>Modelado 3D en Blender</p>
+            <div class="portfolio-card">
+                <div class="card-image">
+                    <img src="img/preview-infografia.jpg" alt="Infografías">
+                </div>
+                <div class="card-content">
+                    <h3>Infografías</h3>
+                    <p>Diseño visual de información y organización de datos.</p>
+                    <a href="infografias.html" class="btn-portfolio">Ver Trabajos</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-image">
+                    <img src="img/preview-carteles.jpg" alt="Diseño de Carteles">
+                </div>
+                <div class="card-content">
+                    <h3>Carteles</h3>
+                    <p>Diseño gráfico y composición visual para cartelería.</p>
+                    <a href="carteles.html" class="btn-portfolio">Ver Diseños</a>
                 </div>
             </div>
 
         </div>
-    </section>
-
-    <script>
-    function filterPortafolio(category) {
-        const cards = document.querySelectorAll('.project-card');
-        const buttons = document.querySelectorAll('.tab-btn');
-
-        // Cambiar botón activo
-        buttons.forEach(btn => btn.classList.remove('active'));
-        event.currentTarget.classList.add('active');
-
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.95)';
-            
-            setTimeout(() => {
-                if (category === 'todos' || card.classList.contains(category)) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 50);
-                } else {
-                    card.style.display = 'none';
-                }
-            }, 300);
-        });
-    }
-    </script>
-
-</body>
-</html>
+    </div>
+</section>
