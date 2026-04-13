@@ -303,10 +303,13 @@ body {
     transform: translateY(-2px);
 }
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
     gap: 30px;
-    padding: 40px 0;
+    max-width:1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .portfolio-card {
@@ -346,4 +349,98 @@ body {
 
 .btn-portfolio:hover {
     background-color: #4a6d85;
+}
+/* --- SECCIÓN PORTAFOLIO --- */
+.portfolio-section {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center; /* Centra todo el contenido */
+}
+
+.portfolio-section .container {
+    width: 90%;           /* Deja un pequeño margen en pantallas chicas */
+    max-width: 1200px;    /* No permite que se estire más de esto en pantallas grandes */
+    margin: 0 auto;       /* Centra el contenedor horizontalmente */
+    text-align: center;   /* Centra el título y el subtítulo */
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;      /* Si no caben las 4, se bajan automáticamente */
+    justify-content: center; /* Centra las tarjetas si quedan espacios */
+    gap: 25px;            /* Espacio entre cada tarjeta */
+    margin-top: 40px;
+}
+
+.portfolio-card {
+    flex: 1;              /* Intentan medir lo mismo */
+    min-width: 280px;     /* Pero no se hacen más chicas que esto */
+    max-width: 320px;     /* Ni más grandes que esto para que no se vean gigantes */
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px); /* Efecto de levante al pasar el mouse */
+}
+/* --- ESTILO DE GALERÍA --- */
+.gallery-section {
+    padding: 60px 5%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 350px; /* Altura fija para que todas se vean parejas */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    transition: transform 0.5s ease;
+}
+
+/* Efecto al pasar el mouse */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(93, 138, 168, 0.6); /* El azul de tu acento con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 50px;
 }
