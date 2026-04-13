@@ -444,3 +444,23 @@ body {
     padding: 10px 20px;
     border-radius: 50px;
 }
+.overlay-text {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.overlay-text p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.overlay-text span {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
