@@ -480,3 +480,48 @@ body {
     background-color: #4a6e86;
     transform: translateY(-3px);
 }
+/* --- ESTILO ESPECÍFICO PARA MODELADO 3D --- */
+
+/* Animación de flotación infinita */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.card-3d {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+    animation: floating 4s ease-in-out infinite;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Diferentes tiempos de animación para que no se muevan todas igual */
+.card-3d:nth-child(2) { animation-delay: 0.5s; }
+.card-3d:nth-child(3) { animation-delay: 1s; }
+.card-3d:nth-child(4) { animation-delay: 1.5s; }
+
+.card-3d:hover {
+    transform: scale(1.05) translateY(-15px) rotateX(5deg) !important;
+    box-shadow: 0 20px 40px rgba(93, 138, 168, 0.3); /* Sombra con el azul de tu acento */
+    z-index: 10;
+    animation-play-state: paused; /* Se detiene la flotación al pasar el mouse */
+}
+
+/* Ajuste del brillo de los renders */
+.card-3d img {
+    filter: brightness(0.9);
+    transition: 0.5s;
+}
+
+.card-3d:hover img {
+    filter: brightness(1.1);
+}
+
+/* Personalización del overlay para 3D */
+.section-3d .gallery-overlay {
+    background: linear-gradient(transparent, rgba(93, 138, 168, 0.8));
+    align-items: flex-end;
+    padding-bottom: 30px;
+}
