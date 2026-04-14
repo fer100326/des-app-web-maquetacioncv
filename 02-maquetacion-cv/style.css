@@ -95,7 +95,7 @@ body {
     flex: 1.2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinea el botón al inicio de la tarjeta */
+    align-items: flex-start; 
     justify-content: center;
 }
 
@@ -129,7 +129,8 @@ body {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 
@@ -233,11 +234,11 @@ body {
 .contact-info h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: var(--azul-oscuro); /* Asegúrate de tener definida esta variable */
+    color: var(--azul-oscuro); 
 }
 
 .contact-info h2 span {
-    color: #5D8AA8; /* El azul que usamos en el CV */
+    color: #5D8AA8; 
 }
 
 .contact-details {
@@ -251,7 +252,7 @@ body {
     margin-bottom: 20px;
 }
 .contact-icon-img {
-    width: 24px;  /* Tamaño de los iconos .png */
+    width: 24px;  
     height: 24px;
     object-fit: contain;
 }
@@ -329,7 +330,7 @@ body {
 .card-image img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Esto evita que tus dibujos se estiren feo */
+    object-fit: cover; 
 }
 
 .card-content {
@@ -339,7 +340,7 @@ body {
 .btn-portfolio {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #5b85a1; /* Usa el color azul que ya tienes */
+    background-color: #5b85a1; 
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -358,24 +359,16 @@ body {
 }
 
 .portfolio-section .container {
-    width: 90%;           /* Deja un pequeño margen en pantallas chicas */
-    max-width: 1200px;    /* No permite que se estire más de esto en pantallas grandes */
-    margin: 0 auto;       /* Centra el contenedor horizontalmente */
-    text-align: center;   /* Centra el título y el subtítulo */
-}
-
-.portfolio-grid {
-    display: flex;
-    flex-wrap: wrap;      /* Si no caben las 4, se bajan automáticamente */
-    justify-content: center; /* Centra las tarjetas si quedan espacios */
-    gap: 25px;            /* Espacio entre cada tarjeta */
-    margin-top: 40px;
+    width: 90%;           
+    max-width: 1200px;    
+    margin: 0 auto;       
+    text-align: center;   
 }
 
 .portfolio-card {
-    flex: 1;              /* Intentan medir lo mismo */
-    min-width: 280px;     /* Pero no se hacen más chicas que esto */
-    max-width: 320px;     /* Ni más grandes que esto para que no se vean gigantes */
+    flex: 1;              
+    min-width: 280px;     
+    max-width: 320px;     
     background: #fff;
     border-radius: 15px;
     overflow: hidden;
@@ -384,11 +377,11 @@ body {
 }
 
 .portfolio-card:hover {
-    transform: translateY(-10px); /* Efecto de levante al pasar el mouse */
+    transform: translateY(-10px); 
 }
 /* --- ESTILO DE GALERÍA --- */
 .gallery-section {
-    padding: 60px 5%;
+    padding: 30px 5%;
 }
 
 .gallery-grid {
@@ -402,7 +395,7 @@ body {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
-    height: 350px; /* Altura fija para que todas se vean parejas */
+    height: 350px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     cursor: pointer;
 }
@@ -410,7 +403,7 @@ body {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    object-fit: cover; 
     transition: transform 0.5s ease;
 }
 
@@ -425,7 +418,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(93, 138, 168, 0.6); /* El azul de tu acento con transparencia */
+    background: rgba(93, 138, 168, 0.6); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -463,4 +456,27 @@ body {
     border-radius: 50px;
     font-weight: bold;
     margin-bottom: 5px;
+}
+/* --- BOTÓN REGRESAR --- */
+.container-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.btn-back {
+    background-color: var(--acento-azul); /* Usa la variable que ya tienes definida */
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(93, 138, 168, 0.3);
+}
+
+.btn-back:hover {
+    background-color: #4a6e86;
+    transform: translateY(-3px);
 }
