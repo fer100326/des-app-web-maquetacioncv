@@ -466,7 +466,7 @@ body {
 }
 
 .btn-back {
-    background-color: var(--acento-azul); /* Usa la variable que ya tienes definida */
+    background-color: var(--acento-azul); 
     color: white;
     padding: 12px 35px;
     border-radius: 50px;
@@ -481,8 +481,6 @@ body {
     transform: translateY(-3px);
 }
 /* --- ESTILO ESPECÍFICO PARA MODELADO 3D --- */
-
-/* Animación de flotación infinita */
 @keyframes floating {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
@@ -492,24 +490,22 @@ body {
 .card-3d {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+    backdrop-filter: blur(10px); 
     animation: floating 4s ease-in-out infinite;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Diferentes tiempos de animación para que no se muevan todas igual */
 .card-3d:nth-child(2) { animation-delay: 0.5s; }
 .card-3d:nth-child(3) { animation-delay: 1s; }
 .card-3d:nth-child(4) { animation-delay: 1.5s; }
 
 .card-3d:hover {
     transform: scale(1.05) translateY(-15px) rotateX(5deg) !important;
-    box-shadow: 0 20px 40px rgba(93, 138, 168, 0.3); /* Sombra con el azul de tu acento */
+    box-shadow: 0 20px 40px rgba(93, 138, 168, 0.3); 
     z-index: 10;
-    animation-play-state: paused; /* Se detiene la flotación al pasar el mouse */
+    animation-play-state: paused; 
 }
 
-/* Ajuste del brillo de los renders */
 .card-3d img {
     filter: brightness(0.9);
     transition: 0.5s;
@@ -519,9 +515,60 @@ body {
     filter: brightness(1.1);
 }
 
-/* Personalización del overlay para 3D */
 .section-3d .gallery-overlay {
     background: linear-gradient(transparent, rgba(93, 138, 168, 0.8));
     align-items: flex-end;
     padding-bottom: 30px;
+}
+/* --- ESTILO PARA LA SECCIÓN DE INFOGRAFÍAS --- */
+.info-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; 
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5); 
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    background: var(--blanco-puro);
+    box-shadow: var(--sombra);
+}
+
+.info-image img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.info-content h3 {
+    color: var(--acento-azul);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.info-content p {
+    font-size: 1.1rem;
+    color: var(--texto-oscuro);
+    line-height: 1.8;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .info-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }
