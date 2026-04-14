@@ -572,3 +572,19 @@ body {
         text-align: center;
     }
 }
+/* --- ESTILO PARA CARTELES --- */
+.cartel-item {
+    border: 8px solid white; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    height: auto; 
+}
+
+.cartel-item img {
+    object-fit: contain; 
+    background-color: #f9f9f9;
+}
+
+.cartel-item:hover {
+    border-color: var(--acento-azul);
+    transform: translateY(-10px) rotate(1deg); 
+}
